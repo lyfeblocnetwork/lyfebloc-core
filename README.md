@@ -35,11 +35,11 @@ node            |  |                               |  |
 
 ## Install
 
-See <https://github.com/lyfeblocnetwork/lyfebloc-app#install>
+See <https://github.com/lyfeblocnetwork/lyfebloc#install>
 
 ## Usage
 
-See <https://github.com/lyfeblocnetwork/lyfebloc-app#usage>
+See <https://github.com/lyfeblocnetwork/lyfebloc#usage>
 
 ## Contributing
 
