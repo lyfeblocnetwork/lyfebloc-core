@@ -3,7 +3,7 @@
 
 ## Lyfebloc Network
 
-Lyfebloc Network is a modular and extensible framework for building Ethereum-compatible blockchain networks.
+Lyfebloc Network is a versatile modular blockchain network that allows anyone to easily and securely set up their own Ethereum-compatible sovereign chain.
 
 To find out more about Lyfebloc Network, visit the [official website](https://lyfeblocnetwork.com/).
 
