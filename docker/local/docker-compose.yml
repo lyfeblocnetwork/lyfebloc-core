@@ -12,6 +12,12 @@ services:
       - node-2:/lyfebloc-core/data-2
       - node-3:/lyfebloc-core/data-3
       - node-4:/lyfebloc-core/data-4
+      - node-5:/lyfebloc-core/data-5
+      - node-6:/lyfebloc-core/data-6
+      - node-7:/lyfebloc-core/data-7
+      - node-8:/lyfebloc-core/data-8
+      - node-9:/lyfebloc-core/data-9
+      - node-10:/lyfebloc-core/data-10
       - genesis:/genesis
     networks:
       - lyfebloc-core-docker
@@ -94,6 +100,120 @@ services:
       - lyfebloc-core-docker
     restart: on-failure
 
+      node-5:
+    build:
+      context: ../../
+      dockerfile: docker/local/Dockerfile
+    command: ["server", "--data-dir", "/data", "--chain", "/genesis/genesis.json", "--grpc-address", "0.0.0.0:9632", "--libp2p", "0.0.0.0:1478", "--jsonrpc", "0.0.0.0:8545", "--prometheus", "0.0.0.0:5001", "--seal"]
+    depends_on:
+      init:
+        condition: service_completed_successfully
+    ports:
+      - '40000:9632'
+      - '40002:8545'
+      - '40003:5001'
+    volumes:
+      - node-5:/data
+      - genesis:/genesis
+    networks:
+      - lyfebloc-core-docker
+    restart: on-failure
+
+      node-6:
+    build:
+      context: ../../
+      dockerfile: docker/local/Dockerfile
+    command: ["server", "--data-dir", "/data", "--chain", "/genesis/genesis.json", "--grpc-address", "0.0.0.0:9632", "--libp2p", "0.0.0.0:1478", "--jsonrpc", "0.0.0.0:8545", "--prometheus", "0.0.0.0:5001", "--seal"]
+    depends_on:
+      init:
+        condition: service_completed_successfully
+    ports:
+      - '40000:9632'
+      - '40002:8545'
+      - '40003:5001'
+    volumes:
+      - node-6:/data
+      - genesis:/genesis
+    networks:
+      - lyfebloc-core-docker
+    restart: on-failure
+
+          node-7:
+    build:
+      context: ../../
+      dockerfile: docker/local/Dockerfile
+    command: ["server", "--data-dir", "/data", "--chain", "/genesis/genesis.json", "--grpc-address", "0.0.0.0:9632", "--libp2p", "0.0.0.0:1478", "--jsonrpc", "0.0.0.0:8545", "--prometheus", "0.0.0.0:5001", "--seal"]
+    depends_on:
+      init:
+        condition: service_completed_successfully
+    ports:
+      - '40000:9632'
+      - '40002:8545'
+      - '40003:5001'
+    volumes:
+      - node-7:/data
+      - genesis:/genesis
+    networks:
+      - lyfebloc-core-docker
+    restart: on-failure
+
+              node-8:
+    build:
+      context: ../../
+      dockerfile: docker/local/Dockerfile
+    command: ["server", "--data-dir", "/data", "--chain", "/genesis/genesis.json", "--grpc-address", "0.0.0.0:9632", "--libp2p", "0.0.0.0:1478", "--jsonrpc", "0.0.0.0:8545", "--prometheus", "0.0.0.0:5001", "--seal"]
+    depends_on:
+      init:
+        condition: service_completed_successfully
+    ports:
+      - '40000:9632'
+      - '40002:8545'
+      - '40003:5001'
+    volumes:
+      - node-8:/data
+      - genesis:/genesis
+    networks:
+      - lyfebloc-core-docker
+    restart: on-failure
+
+                  node-9:
+    build:
+      context: ../../
+      dockerfile: docker/local/Dockerfile
+    command: ["server", "--data-dir", "/data", "--chain", "/genesis/genesis.json", "--grpc-address", "0.0.0.0:9632", "--libp2p", "0.0.0.0:1478", "--jsonrpc", "0.0.0.0:8545", "--prometheus", "0.0.0.0:5001", "--seal"]
+    depends_on:
+      init:
+        condition: service_completed_successfully
+    ports:
+      - '40000:9632'
+      - '40002:8545'
+      - '40003:5001'
+    volumes:
+      - node-9:/data
+      - genesis:/genesis
+    networks:
+      - lyfebloc-core-docker
+    restart: on-failure
+
+
+                  node-10:
+    build:
+      context: ../../
+      dockerfile: docker/local/Dockerfile
+    command: ["server", "--data-dir", "/data", "--chain", "/genesis/genesis.json", "--grpc-address", "0.0.0.0:9632", "--libp2p", "0.0.0.0:1478", "--jsonrpc", "0.0.0.0:8545", "--prometheus", "0.0.0.0:5001", "--seal"]
+    depends_on:
+      init:
+        condition: service_completed_successfully
+    ports:
+      - '40000:9632'
+      - '40002:8545'
+      - '40003:5001'
+    volumes:
+      - node-10:/data
+      - genesis:/genesis
+    networks:
+      - lyfebloc-core-docker
+    restart: on-failure
 networks:
   lyfebloc-core-docker:
     driver: bridge
